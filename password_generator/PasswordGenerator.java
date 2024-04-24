@@ -1,6 +1,7 @@
 package password_generator;
 
 import java.security.SecureRandom;
+import java.util.Scanner;
 
 public class PasswordGenerator {
     private static final String CHARACTER = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+";
@@ -17,6 +18,10 @@ public class PasswordGenerator {
     }
 
     public static void main(String[] args) {
-        System.out.println(generatePassword(12));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What's the length of the password?");
+        int passLength = scanner.nextInt();
+        System.out.println(generatePassword(passLength));
+        scanner.close();
     }
 }
